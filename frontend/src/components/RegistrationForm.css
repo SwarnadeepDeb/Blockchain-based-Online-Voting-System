@@ -1,0 +1,92 @@
+/* General content styles */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    /* min-height: 100vh; */
+    /* background-color: #f5f5f5; */
+  }
+  
+  /* Container for the form */
+  .content1 {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Heading style */
+  .content1 h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Error message style */
+  .error-message {
+    color: #d9534f;
+    background: #f9d6d5;
+    border: 1px solid #d9534f;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form group styles */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Label styles */
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Input field styles */
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Button styles */
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+  }
+  
+  /* Approval button styles */
+  .approval-btn {
+    background-color: #5bc0de;
+    color: #fff;
+  }
+  
+  .approval-btn:hover {
+    background-color: #31b0d5;
+  }
+  
+  /* Check approval status button styles */
+  .check-approval-btn {
+    background-color: #5bc0de;
+    color: #fff;
+  }
+  
+  .check-approval-btn:hover {
+    background-color: #31b0d5;
+  }
+  

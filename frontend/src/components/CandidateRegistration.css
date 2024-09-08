@@ -1,0 +1,116 @@
+/* General page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    /* padding: 20px; */
+  }
+  
+  .content-inner {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styles */
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Form group styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Approval button styles */
+  .approval-btn, .check-approval-btn {
+    background-color: #28a745;
+  }
+  
+  .check-approval-btn {
+    background-color: #17a2b8;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    text-align: center;
+  }
+  
+  /* Responsive design for mobile */
+  @media (max-width: 600px) {
+    .content-inner {
+      padding: 20px;
+    }
+  
+    button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,105 @@
+/* Card container */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 350px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+    margin: 20px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Election title */
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  /* Description of the election */
+  .description {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 15px;
+  }
+  
+  /* Countdown timer styles */
+  .countdown {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6347; /* Tomato color for urgency */
+    margin-bottom: 10px;
+  }
+  
+  /* Timer label */
+  .timer-label {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 5px;
+  }
+  
+  /* Button container for Register/Details buttons */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  /* Register, Vote, and Result buttons */
+  .register-btn, .details-btn, .candidate-registration-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-btn:hover, .details-btn:hover, .candidate-registration-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional button styling for details */
+  .details-btn {
+    background-color: #28a745;
+  }
+  
+  .details-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Candidate registration button */
+  .candidate-registration-btn {
+    background-color: #ff6347;
+    margin-top: 15px;
+  }
+  
+  .candidate-registration-btn:hover {
+    background-color: #e5533d;
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .button-container {
+      flex-direction: column;
+    }
+  
+    .register-btn, .details-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
