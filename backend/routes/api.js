@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const { ethers ,verifyMessage} = require('ethers');
@@ -369,7 +370,8 @@ const contractABI = [
   }
 ]; // Import your contract ABI
 
-const contractAddress = process.env.CONTRACT_ADDRESS; // Access the contract address from .env
+const contractAddress = process.env.CONTRACT_ADDRESS; 
+console.log(contractAddress)// Access the contract address from .env
 const provider = new ethers.JsonRpcProvider(process.env.PROVIDER_URL); // Access the provider URL from .env
 const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
@@ -467,6 +469,7 @@ router.post('/approve', verifyOwner, async (req, res) => {
 router.get('/unapproved', verifyOwner, async (req, res) => {
   const { electionID } = req.query;
   try {
+    console.log("HERE");
     const unapprovedRegistrations = await Registration.find({ approved: false, electionID });
     res.json(unapprovedRegistrations);
   } catch (error) {

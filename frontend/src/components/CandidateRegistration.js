@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import './CandidateRegistration.css'
+import './CandidateRegistration.css';
 
 function CandidateRegistrationForm({ updateElections, signer, elections, contract }) {
   const { PremId } = useParams();
@@ -16,7 +16,12 @@ function CandidateRegistrationForm({ updateElections, signer, elections, contrac
       try {
         const message = "candidate";
         const signature = await signer.signMessage(message);
-        const response = await axios.post('https://blockchain-based-online-voting-system-1.onrender.com/api/register-candidate', { address, id, electionID: PremId, signature });
+        const response = await axios.post('http://localhost:5000/api/register-candidate', { 
+          address, 
+          id, 
+          electionID: PremId, 
+          signature 
+        });
         if (response.status === 201) {
           alert('Data submitted for approval.');
         } else {
@@ -34,7 +39,7 @@ function CandidateRegistrationForm({ updateElections, signer, elections, contrac
   // Function to check approval status
   const checkApprovalStatus = async () => {
     try {
-      const response = await axios.get(`https://blockchain-based-online-voting-system-1.onrender.com/api/check-candidate-approval`, {
+      const response = await axios.get(`http://localhost:5000/api/check-candidate-approval`, {
         params: { address, id, electionID: PremId }
       });
       if (response.data.approved) {

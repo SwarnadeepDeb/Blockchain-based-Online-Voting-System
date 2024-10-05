@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Approvals.css';
 
+// https://blockchain-based-online-voting-system-1.onrender.com
+// Replace the base URL to point to localhost
+const baseURL = "http://localhost:5000";
+
 function Approvals({ signer }) {
   const [electionID, setElectionID] = useState('');
   const [unapprovedRegistrations, setUnapprovedRegistrations] = useState(null);
@@ -13,7 +17,7 @@ function Approvals({ signer }) {
       const message = "Admin";
       const signature = await signer.signMessage(message);
 
-      const response = await axios.get(`https://blockchain-based-online-voting-system-1.onrender.com/api/unapproved`, {
+      const response = await axios.get(`${baseURL}/api/unapproved`, {
         params: { electionID, signature }
       });
       setUnapprovedRegistrations(response.data);
@@ -28,7 +32,7 @@ function Approvals({ signer }) {
       const message = "Admin";
       const signature = await signer.signMessage(message);
 
-      const response = await axios.get(`https://blockchain-based-online-voting-system-1.onrender.com/api/unapproved-candidates`, {
+      const response = await axios.get(`${baseURL}/api/unapproved-candidates`, {
         params: { electionID, signature }
       });
       setUnapprovedCandidates(response.data);
@@ -43,7 +47,7 @@ function Approvals({ signer }) {
     const signature = await signer.signMessage(message);
 
     try {
-      const response = await axios.post(`https://blockchain-based-online-voting-system-1.onrender.com/api/approve`, {
+      const response = await axios.post(`${baseURL}/api/approve`, {
         address,
         id,
         electionID,
@@ -51,7 +55,6 @@ function Approvals({ signer }) {
       });
       if (response.status === 200) {
         alert('User approved successfully.');
-        // Remove approved user from the list
         setUnapprovedRegistrations(unapprovedRegistrations.filter(reg => reg.address !== address || reg.id !== id));
       } else {
         setErrorMessage('Failed to approve user. Please try again.');
@@ -67,7 +70,7 @@ function Approvals({ signer }) {
     const signature = await signer.signMessage(message);
 
     try {
-      const response = await axios.post(`https://blockchain-based-online-voting-system-1.onrender.com/api/approve-candidate`, {
+      const response = await axios.post(`${baseURL}/api/approve-candidate`, {
         address,
         id,
         electionID,
@@ -75,7 +78,6 @@ function Approvals({ signer }) {
       });
       if (response.status === 200) {
         alert('Candidate approved successfully.');
-        // Remove approved candidate from the list
         setUnapprovedCandidates(unapprovedCandidates.filter(cand => cand.address !== address || cand.id !== id));
       } else {
         setErrorMessage('Failed to approve candidate. Please try again.');
