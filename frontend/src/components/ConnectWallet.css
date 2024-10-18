@@ -1,71 +1,120 @@
-/* Container styles */
-.outlet-content {
+/* Full-page landing styling */
+.landing-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 1; /* Make the outlet take the rest of the available space */
-  margin: 20px;
-   /* Light background for contrast */
-   /* Curve the content area edges */
-  /* Subtle shadow for outlet area */
-  flex-wrap: wrap;
-}
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.wallet-container {
-  background-color: #f4f6f8;
-  /* background-color: white; */
-  border-radius: 8px;
-  padding: 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 200px);
+  /* background-color: #e0f7fa; Same background color as the navbar */
   text-align: center;
-  max-width: 400px;
-  width: 100%;
+  padding: 0 20px;
+  /* width: 100%; */
 }
 
-/* Text styles */
-p {
-  font-size: 18px;
-  color: #333;
+/* Headings and text */
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #00796b;
   margin-bottom: 20px;
 }
 
-/* Button styles */
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 20px;
+p {
+  font-size: 18px;
+  color: #004d40;
+  margin-bottom: 40px;
+}
+
+.wallet-address {
   font-size: 16px;
-  border-radius: 4px;
+  color: #00796b;
+  word-wrap: break-word; /* Handles long addresses */
+  margin-bottom: 30px;
+}
+
+/* Paragraph with additional information */
+.info-text {
+  font-size: 20px;
+  color: #004d40;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+/* Button styling */
+.button {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #00796b;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+
+.button:hover {
+  background-color: #004d40;
+  transform: scale(1.05); /* Slight scaling for hover effect */
 }
 
-/* Responsive design for mobile */
-@media (max-width: 600px) {
-  .outlet-content{
-    background-color: transparent;
-    margin: 0;
-    box-shadow: none;
-  }
-  .wallet-container {
-    padding: 20px;
+.button:active {
+  transform: scale(0.95); /* Shrinks slightly when clicked */
+}
+.connect-button{
+  margin-top: 20px;
+}
+.disconnect-button {
+  margin-top: 20px;
+  background-color: #d32f2f; /* Red for disconnect */
+}
+
+.disconnect-button:hover {
+  background-color: #b71c1c;
+}
+
+.loading-text {
+  font-size: 16px;
+  color: #00796b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
   }
 
-  button {
-    width: 100%;
-    padding: 12px;
+  p, .wallet-address {
+    font-size: 16px;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .info-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
   }
 
   p {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .info-text {
     font-size: 16px;
   }
 }

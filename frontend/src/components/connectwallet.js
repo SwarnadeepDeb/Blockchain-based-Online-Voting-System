@@ -1,8 +1,10 @@
 import { ethers } from 'ethers';
-import { useEffect } from 'react';
-import './ConnectWallet.css'
+import { useEffect, useState } from 'react';
+import './ConnectWallet.css';
 
 function ConnectWallet({ updateSetState, updateConnected, connected, updateElections }) {
+  const [walletAddress, setWalletAddress] = useState('');
+  const [loading, setLoading] = useState(false);
   const abi = [
     {
       "inputs": [
@@ -366,6 +368,7 @@ function ConnectWallet({ updateSetState, updateConnected, connected, updateElect
       "type": "function"
     }
   ];
+
   const connectWallet = async () => {
     try {
       const accounts = await window.ethereum.request({
@@ -375,21 +378,23 @@ function ConnectWallet({ updateSetState, updateConnected, connected, updateElect
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const contract = new ethers.Contract(
-        '0x6cc5b39416b1F521f8EFd517C6Fc97b03af4336C',
+        '0x6cc5b39416b1F521f8EFd517C6Fc97b03af4336C', // Contract address
         abi,
         signer
       );
-      
+
       console.log(contract);
 
       updateSetState({ provider, signer, contract });
       updateConnected(true);
-      
+      setWalletAddress(accounts[0]);
+
       // Store the necessary state in localStorage
       localStorage.setItem('walletConnected', 'true');
       localStorage.setItem('walletAddress', accounts[0]);
       localStorage.setItem('contractAddress', '0x4f469587e57f713172c984c00d81b820cf481011');
 
+      setLoading(false);
     } catch (error) {
       console.error(error);
       updateSetState({
@@ -403,41 +408,53 @@ function ConnectWallet({ updateSetState, updateConnected, connected, updateElect
   };
 
   const disconnectWallet = async () => {
-    try {
-      updateSetState({
-        provider: null,
-        signer: null,
-        contract: null
-      });
-      updateElections([]);
-      updateConnected(false);
-      
-      // Clear the localStorage
-      localStorage.removeItem('walletConnected');
-      localStorage.removeItem('walletAddress');
-      localStorage.removeItem('contractAddress');
-    } catch (error) {
-      console.error(error);
-    }
+    updateSetState({
+      provider: null,
+      signer: null,
+      contract: null
+    });
+    updateElections([]);
+    updateConnected(false);
+
+    // Clear the localStorage
+    localStorage.removeItem('walletConnected');
+    localStorage.removeItem('walletAddress');
+    localStorage.removeItem('contractAddress');
+
+    setWalletAddress('');
   };
 
   // Check localStorage on component mount to restore connection state
+  useEffect(() => {
+    const walletConnected = localStorage.getItem('walletConnected');
+    const walletAddress = localStorage.getItem('walletAddress');
+
+    if (walletConnected === 'true' && walletAddress) {
+      connectWallet()
+    }
+  }, [connected]);
 
   return (
-    <div className='outlet-content '>
-      <div className="wallet-container">
-        {connected ? (
-          <>
-            <p>Connected</p>
-            <button onClick={disconnectWallet}>Disconnect</button>
-          </>
-        ) : (
-          <>
-            <p>Connect your wallet</p>
-            <button onClick={connectWallet}>Connect</button>
-          </>
-        )}
-      </div>
+    <div className='landing-page'>
+      {connected ? (
+        <>
+          <h1>Welcome, Voter!</h1>
+          <p className='wallet-address'>Wallet Address: {walletAddress}</p>
+          <button className='button disconnect-button' onClick={disconnectWallet}>Disconnect</button>
+        </>
+      ) : (
+        <>
+          <h1>Welcome to VoteChain</h1>
+          <p className='info-text'>
+            Connect your wallet to participate in the upcoming elections. We are using the Sepolia test network to ensure a secure and seamless voting experience. By connecting your wallet, you'll be able to vote in various elections, track results, and more.
+          </p>
+          {loading ? (
+            <p className='loading-text'>Connecting...</p>
+          ) : (
+            <button className='button connect-button' onClick={connectWallet}>Connect Wallet</button>
+          )}
+        </>
+      )}
     </div>
   );
 }

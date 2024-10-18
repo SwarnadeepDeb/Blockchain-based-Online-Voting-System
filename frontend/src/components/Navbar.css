@@ -1,149 +1,158 @@
-/* General styles for the navbar */
 .navbar {
+  background-color: #e0f7fa; 
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #333;
-  background-color: black;
-  color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  z-index: 100;
 }
 
-/* Logo section */
 .logo-search {
   display: flex;
   align-items: center;
-
 }
 
 .logo {
-  width: 90px;
-  height: 65px;
-  background-color: #61dafb;
-  /* border-radius: 50%; */
+  font-size: 24px;
+  font-weight: bold;
+  color: #00796b;
   margin-right: 20px;
-  background-image: url(Logoimage.png);
-  background-size: cover;  
-
+  font-family: "Pacifico","Updock", cursive;
+  font-size: 36px; 
+  color: #00796b;
 }
 
-/* Search input styles */
 .search input {
-  margin-bottom: 0;
   padding: 8px 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
+  border-radius: 20px;
+  border: 2px solid #00796b;
   outline: none;
+  width: 250px;
+  font-size: 16px;
+  color: #00796b;
 }
 
-/* Election button section */
-.election-button {
-  display: flex;
-  align-items: center;
+.search input::placeholder {
+  color: #00796b;
+  opacity: 0.8;
 }
 
-.button {
-  background-color: #61dafb;
-  color: #333;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
+.election-button .button {
+  background-color: #00796b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.election-button .button:hover {
+  background-color: #004d40; 
+  border: 2px solid #004d40;
+}
+
+.common a {
+  margin: 0 15px;
+  color: #00796b;
   font-weight: bold;
   text-decoration: none;
-  margin-right: 10px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: color 0.3s ease;
 }
 
-.button:hover {
-  background-color: #4fa3c3;
-  color: #f5f5f5;
+.common a.active {
+  color: #004d40; 
 }
 
-/* Hamburger menu styles */
+.common a:hover {
+  color: #004d40;
+}
+
 .handbargermenu {
+  display: none; 
   cursor: pointer;
+  color: #00796b;
+}
+
+.handbargermenu i {
   font-size: 24px;
 }
-.handbargermenu i {
-  color: #f5f5f5;
-}
 
-/* Hide ul-container on larger screens (min-width: 769px) */
 .ul-container {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #e0f7fa;
+  width: 250px;
+  padding: 0;
+  border-radius: 5px;
   display: none;
   flex-direction: column;
-  background-color: black;
 }
-/* Styling for the li tags in the ul-container */
-/* Styling for the li tags in the ul-container */
+
 .ul-container li {
-  list-style: none; /* Remove default list bullets */
-  padding: 10px 15px; /* Add padding for spacing */
-  background-color: black;/* Same color as the navbar */
-  font-size: 18px; /* Set font size for readability */
-  color: #f5f5f5; /* Same text color as the navbar */
-  text-align: center; /* Center-align text */
-  margin: 10px 20px; /* Add margin from both top/bottom and left/right */
+  padding: 12px 20px;
+  border-bottom: 1px solid #ccc;
 }
 
-.ul-container li a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit color from li */
-  display: block; /* Make the link cover the entire li area */
+.ul-container li:last-child {
+  border-bottom: none;
 }
 
-/* Hover effect for li tags (without animation) */
-.ul-container li:hover {
-  background-color: #444; /* Slightly lighter shade on hover */
+.ul-container.open {
+  display: flex;
 }
 
-
-
-
-
-/* Hide ul-container and hamburger menu on larger screens */
-@media (min-width: 769px) {
-  .handbargermenu {
-      display: none; /* Hide hamburger menu on larger screens */
-  }
-  .ul-container {
-      display: none; /* Ensure the menu is completely hidden on larger screens */
-  }
-  .election-button{
-    display: flex;
-  }
-  .search{
-    display: inline-block;
-  }
+.ul-container a {
+  color: #00796b;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* Menu only visible on smaller screens when open */
-@media (max-width: 768px) {
-  .search{
+.ul-container a:hover {
+  color: #004d40;
+}
+
+@media (max-width: 1180px) {
+  .search input {
+    width: 180px; 
+  }
+
+  .election-button .button {
+    padding: 8px 15px;
+  }
+  .election-button-main {
     display: none;
   }
-  .election-button{
+  .common {
     display: none;
   }
+
   .handbargermenu {
-      display: inline-block;
+    display: block; 
   }
+
   .ul-container.open {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 68px;
-      right: 0;
-      left: 0;
-      bottom:0;
-      background-color: #fff;
-      width: 100%;
-      /* padding: 10px; */
+    display: flex; 
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px; 
+    font-weight: bold;
   }
 
-  .ul-container li {
-      margin: 0px 10px ;
+  .search input {
+    width: 140px; 
+  }
+
+  .navbar {
+    padding: 10px 20px; 
   }
 }

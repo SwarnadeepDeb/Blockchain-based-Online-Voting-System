@@ -1,139 +1,116 @@
-/* General page styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f7;
-    margin: 0;
-    padding: 0px;
-    color: #333;
-  }
-  
-  .content {
-    display: flex;
-    justify-content: center;
-    /* padding: 20px; */
-  }
-  
-  .content-inner {
-    background-color: white;
-    border-radius: 8px;
-    padding: 40px;
-    max-width: 700px;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Title styles */
-  .title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #333;
-  }
-  
-  /* Label and input styles */
-  .label {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #666;
-    display: block;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  /* Button styles */
-  .button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Error message styles */
-  .error-message {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    border: 1px solid #f5c6cb;
-  }
-  
-  /* Sub-title styles */
-  .sub-title {
-    font-size: 20px;
-    margin: 30px 0 10px;
-    color: #444;
-  }
-  
-  /* List styles */
-  .list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Information inside list items */
-  .info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .address {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .id {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  /* Approve button styles inside list items */
-  .approve-button {
-    background-color: #28a745;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .approve-button:hover {
-    background-color: #218838;
-  }
-  
-  /* Message when there are no items */
-  .message {
-    color: #888;
-    font-size: 16px;
-    margin: 20px 0;
-    text-align: center;
-  }
-  
+.content {
+  padding: 20px;
+  /* background-color: #f8f8f8; */
+  /* width: 100%; */
+  height: calc(100vh - 200px);
+}
+
+.content-inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  /* background: white; */
+  border-radius: 8px;
+  padding: 20px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 16px;
+  color: #555;
+}
+
+.input {
+  width: calc(100% - 25px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-group.approvals-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fetch-button {
+  background-color: #00796b;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.fetch-button:hover {
+  background-color: #005f56;
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+.unapproved-section {
+  margin-top: 30px;
+}
+
+.sub-title {
+  font-size: 20px;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.address, .id {
+  font-size: 14px;
+  color: #555;
+}
+
+.approve-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.approve-button:hover {
+  background-color: #388e3c;
+}
+
+.message {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}

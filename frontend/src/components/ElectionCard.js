@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './ElectionCard.css'
+import './ElectionCard.css';
 
-function ElectionCard({ election, signer }) {
+function ElectionCard({ election }) {
     const [remainingTime, setRemainingTime] = useState(0);
     const [timerLabel, setTimerLabel] = useState("");
 
@@ -46,7 +46,7 @@ function ElectionCard({ election, signer }) {
         } else {
             return {
                 remainingTime: 0,
-                timerLabel: "Vote has ended see the result"
+                timerLabel: "Vote has ended, see the result"
             };
         }
     };
@@ -74,34 +74,29 @@ function ElectionCard({ election, signer }) {
             return "Vote";
         } else if (currentDate >= votingEndDate) {
             return "Result";
-        }
-        else {
+        } else {
             return "";
         }
     };
 
     return (
-        <div className="card">
-            <div className="button-container">
-            
-                {getButtonText() && (
-                    <Link to={`/${getButtonText()}/${election.id}`}>
-                    <button className="register-btn">{getButtonText()}</button>
+        <div className="election-section">
+            <div className="election-step">
+                <h2>{election.title}</h2>
+                <p>{election.description}</p>
+                <p className="timer-label">{timerLabel}</p>
+                <div className="election-timer">{formatTime(remainingTime)}</div>
+                <div className="election-action-buttons">
+                    {getButtonText() && (
+                        <Link to={`/${getButtonText()}/${election.id}`}>
+                            <button className="action-button">{getButtonText()}</button>
+                        </Link>
+                    )}
+                    <Link to={`/ElectionDetails/${election.id}`}>
+                        <button className="action-button">See Details</button>
                     </Link>
-                )}
-                <Link to={`/ElectionDetails/${election.id}`}>
-                    <button className="details-btn">See Details</button>
-                </Link>
+                </div>
             </div>
-            <h2 className="title">{election.title}</h2>
-            <p className="description">{election.description}</p>
-            <p className="timer-label">{timerLabel}</p>
-            <div id="countdown" className="countdown">{formatTime(remainingTime)}</div>
-            {timerLabel === "Registration will end in:" && (
-                <Link to={`/candidate/${election.id}`}>
-                    <button className="candidate-registration-btn">Candidate Registration</button>
-                </Link>
-            )}
         </div>
     );
 }

@@ -14,7 +14,7 @@ function Footer() {
                     <div class="footer-section">
                         <h3>Contact</h3>
                         <ul>
-                            <li>Email: support@blockballot.com</li>
+                            <li>Email: swarnadeepdebdevelopment@gmail.com</li>
                             <li>Phone: 7577830760</li>
                             <li>Address: Assam University, silchar</li>
                         </ul>
@@ -30,7 +30,7 @@ function Footer() {
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2024 Blockballot. All rights reserved.</p>
+                    <p>&copy; 2024 VoteChain. All rights reserved.</p>
                 </div>
             </footer>
         </div>

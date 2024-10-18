@@ -5,7 +5,6 @@ const { ethers ,verifyMessage} = require('ethers');
 const Registration = require('../models/registration');
 const CandidateRegistration = require('../models/candidateRegistration');
 
-// Contract ABI
 const contractABI = [
   {
     "inputs": [
@@ -368,14 +367,13 @@ const contractABI = [
     "stateMutability": "nonpayable",
     "type": "function"
   }
-]; // Import your contract ABI
+]; 
 
 const contractAddress = process.env.CONTRACT_ADDRESS; 
-console.log(contractAddress)// Access the contract address from .env
-const provider = new ethers.JsonRpcProvider(process.env.PROVIDER_URL); // Access the provider URL from .env
+console.log(contractAddress)
+const provider = new ethers.JsonRpcProvider(process.env.PROVIDER_URL); 
 const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
-// Middleware to verify the owner
 const verifyOwner = async (req, res, next) => {
   const { electionID, signature } = req.body.electionID ? req.body : req.query;
   try {
@@ -439,7 +437,6 @@ router.get('/check-approval', async (req, res) => {
 
 
 // Route to approve registration
-// Route to approve registration
 router.post('/approve', verifyOwner, async (req, res) => {
   const { address, id, electionID } = req.body;
   try {
@@ -450,7 +447,6 @@ router.post('/approve', verifyOwner, async (req, res) => {
     );
 
     if (registration) {
-      // Delete all other registrations with the same id and electionID
       await Registration.deleteMany({ id, electionID, approved: false });
 
       res.send('Registration approved and related unapproved registrations deleted.');

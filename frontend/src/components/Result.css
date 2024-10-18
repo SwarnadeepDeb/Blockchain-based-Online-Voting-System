@@ -1,81 +1,75 @@
-/* General content styling */
 .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  padding: 20px;
   
-  /* Result container styling */
-  .result {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  /* Heading style */
-  .result h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-    color: #333;
-  }
-  
-  /* Error message style */
-  .error-message {
-    color: #d9534f;
-    background: #f9d6d5;
-    border: 1px solid #d9534f;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-  }
-  
-  /* Winner section styling */
-  .winner {
-    background: #dff0d8;
-    border: 1px solid #d0e9c6;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .winner h3 {
-    margin: 0;
-    color: #3c763d;
-  }
-  
-  /* Candidate list styling */
-  .candidate-list {
-    margin-top: 20px;
-  }
-  
-  .candidate {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .candidate span {
-    display: block;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .candidate span:first-child {
-    font-weight: bold;
-  }
-  
-  .candidate span:not(:first-child) {
-    margin-top: 5px;
-  }
-  
-  /* No candidates found message */
-  .candidate-list p {
-    font-size: 16px;
-    color: #999;
-  }
-  
+  height: calc(100vh - 200px);
+}
+.result-container {
+  width: 100%;
+  padding: 20px;
+  min-height: 500px;
+  max-width: 1000px;
+  border-radius: 8px;
+}
+
+.result-title {
+  font-size: 28px;
+  color: #005b5c;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #005b5c;
+  padding-bottom: 10px;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.winner {
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.winner-text {
+  font-size: 18px;
+  color: #00796b;
+}
+
+.candidate-list {
+  margin-top: 20px;
+}
+
+.candidate-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-id,
+.candidate-name,
+.candidate-votes {
+  font-size: 16px;
+  color: #333;
+}
+
+.candidate-name {
+  font-weight: bold;
+  color: #00796b;
+}

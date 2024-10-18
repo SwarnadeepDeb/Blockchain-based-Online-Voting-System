@@ -93,7 +93,6 @@ function App() {
     };
 
     fetchInitialData();
-    console.log(state);
   }, [state]);
 
   return (
