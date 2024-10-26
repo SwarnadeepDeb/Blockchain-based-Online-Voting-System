@@ -6,7 +6,7 @@ import "./Content.css";
 
 function Dashboard({ filteredElections, signer }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 5;
 
   // Simulating loading state
   const [isLoading, setIsLoading] = useState(true);

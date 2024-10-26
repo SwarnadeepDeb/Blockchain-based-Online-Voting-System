@@ -4,6 +4,16 @@
 ![Issues](https://img.shields.io/github/issues/SwarnadeepDeb/Blockchain-based-Online-Voting-System)
 ![Blockchain-Based Online Voting System](images/ProjectImage.png)
 
+
+## Demo Video
+
+<div align="center">
+    <a href="https://youtu.be/NK5xVZXsehA">
+        <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg" alt="Collaborative Whiteboard Demo" width="80%">
+    </a>
+</div>
+
+
 ## Overview
 
 The **Blockchain-Based Online Voting System** is a decentralized application (DApp) designed to enable secure, transparent, and tamper-resistant online voting. By leveraging blockchain technology, this system ensures that votes are immutable and auditable, providing voters and election organizers with an increased level of trust.
@@ -78,19 +88,22 @@ A live demo of the application can be accessed [here](#) (add your demo link).
 
 ## Screenshots
 
-![Screenshot 1](images/screenshot1.png)  
+![Screenshot 5](images/SS1.png)  
+*Wallet Connection*
+
+![Screenshot 1](images/SS2.png)  
 *Election Creation*
 
-![Screenshot 2](images/screenshot2.png)  
+![Screenshot 2](images/SS3.png)  
 *Candidate Registration*
 
-![Screenshot 3](images/screenshot3.png)  
+![Screenshot 3](images/SS4.png)  
 *Voter Registration*
 
-![Screenshot 4](images/screenshot4.png)  
+![Screenshot 4](images/SS5.png)  
 *Admin dashboard*
 
-![Screenshot 5](images/screenshot5.png)  
+![Screenshot 5](images/SS6.png)  
 *Vote Form*
 
 

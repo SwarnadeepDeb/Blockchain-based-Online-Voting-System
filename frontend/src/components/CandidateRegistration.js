@@ -420,7 +420,7 @@ function CandidateRegistrationForm({ updateElections, signer, elections, contrac
   const { PremId } = useParams();
   const [address, setAddress] = useState("");
   const [id, setId] = useState("");
-  const [approved, setApproved] = useState(true);
+  const [approved, setApproved] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState("");
   const [showAlert, setShowAlert] = useState(false);

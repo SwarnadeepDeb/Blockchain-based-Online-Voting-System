@@ -8,7 +8,7 @@ function RegistrationForm({ updateElections, signer, elections, contract }) {
   let { PremId } = useParams();
   const [address, setAddress] = useState("");
   const [id, setId] = useState("");
-  const [approved, setApproved] = useState(true);
+  const [approved, setApproved] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState(""); 
   const [showAlert, setShowAlert] = useState(false); 

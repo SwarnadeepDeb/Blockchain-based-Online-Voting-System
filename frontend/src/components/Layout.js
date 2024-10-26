@@ -1,5 +1,5 @@
 import React from "react";
-import "./Layout.css";
+// import "./Layout.css";
 import Navbar from "./Navbar";
 import SidebarContent from "./SidebarContent";
 import Footer from "./footer";

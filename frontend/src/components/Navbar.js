@@ -91,7 +91,7 @@ function Navbar({ elections, setFilteredElections }) {
           <Link to="/">Connect Wallet</Link>
         </li>
         <li>
-          <Link to="/Vote/6">Elections</Link>
+          <Link to="/Result/16">Elections</Link>
         </li>
         <li>
           <Link to="/Register/6">Dashboard</Link>
