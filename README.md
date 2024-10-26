@@ -9,7 +9,7 @@
 
 <div align="center">
     <a href="https://youtu.be/NK5xVZXsehA">
-        <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg" alt="Collaborative Whiteboard Demo" width="80%">
+        <img src="images/VideoThumbnail.png" alt="Collaborative Whiteboard Demo" width="80%">
     </a>
 </div>
 
@@ -82,28 +82,25 @@ The project is organized into the following key components:
 3. **Election Monitoring**: Anyone can verify the integrity of votes through blockchain exploration.
 
 
-## Demo
-
-A live demo of the application can be accessed [here](#) (add your demo link).
 
 ## Screenshots
 
-![Screenshot 5](images/SS1.png)  
+![Screenshot 1](images/SS1.jpeg)  
 *Wallet Connection*
 
-![Screenshot 1](images/SS2.png)  
+![Screenshot 2](images/SS2.jpeg)  
 *Election Creation*
 
-![Screenshot 2](images/SS3.png)  
+![Screenshot 3](images/SS3.jpeg)  
 *Candidate Registration*
 
-![Screenshot 3](images/SS4.png)  
+![Screenshot 4](images/SS4.jpeg)  
 *Voter Registration*
 
-![Screenshot 4](images/SS5.png)  
+![Screenshot 5](images/SS5.jpeg)  
 *Admin dashboard*
 
-![Screenshot 5](images/SS6.png)  
+![Screenshot 6](images/SS6.jpeg)  
 *Vote Form*
 
 
